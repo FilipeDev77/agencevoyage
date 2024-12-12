@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import cards from "../data/cardData"; 
 import Cardchoise from "../components/cardChoise"; 
+import Buttonconfirmreservation from "../components/buttonconfirmreservation";
 
 function Infoscityview() {
   const { city } = useParams(); 
@@ -15,7 +16,10 @@ function Infoscityview() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-100"> 
-      <Cardchoise image={cityData.image} title={cityData.title} description={cityData.description} />
+      <Cardchoise card={card} addReservation={addReservation} />
+      
+     
+      
     </div>
   );
 }
