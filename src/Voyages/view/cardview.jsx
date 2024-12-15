@@ -2,11 +2,14 @@ import React from "react";
 import ShowCard from "../components/card";
 import ButtonReserve from "../components/buttonreserve";
 import cards from "../data/cardData";
+import Navbar from "../../navbar";
+
 
 function Card({ addReservation }) {
   
   return (
     <div className="main-content p-8 bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen flex flex-col items-center">
+      <Navbar /> 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full">
         {cards.map((card, index) => (
           <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105">

@@ -1,8 +1,10 @@
 import React from 'react';
+import Navbar from '../../navbar';
 
 export default function ReservationView({ reservations }) {
   return (
     <div className="main-content p-8 bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen flex flex-col items-center">
+      <Navbar /> 
       <h1 className="text-3xl font-bold mb-6">Mes réservations</h1>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {reservations.map((reservation, index) => (

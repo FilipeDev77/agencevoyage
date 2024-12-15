@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <AppRoutes/>
-      <Navbar /> 
+      
     </Router>
     
     

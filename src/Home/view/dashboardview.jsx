@@ -1,10 +1,17 @@
 import React from 'react';
 import ButtonDashboard from '../components/button';
 
+
+
 function DashboardView() {
   return (
+   
+   
     <div className="mt-16 flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-300 to-blue-600 text-white">
+      
+       
       <div className="text-center max-w-lg px-4">
+      
         <h1 className="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 drop-shadow-lg">
           Découvrez le Monde
         </h1>
