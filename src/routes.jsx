@@ -1,31 +1,53 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import DashboardView from './Home/view/dashboardView';
-import Card from './Voyages/view/cardview';
-import ReservationView from './Reservation/view/reservationView';
-import Signup from './Connection/component/Signup';
-import Signin from './Connection/component/Signin';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Signin from "./Connection/component/Signin";
+import Signup from "./Connection/component/Signup";
+import DashboardView from "./Home/view/dashboardView";
+import Card from "./Voyages/view/cardview";
+import ReservationView from "./Reservation/view/reservationView";
+import PrivateRoute from './private'; // Importer PrivateRoute
+import Accountview from "./Account/view/accountview";
 
 
-function AppRoutes() {
-  const [reservations, setReservations] = useState([]);
-
-  const addReservation = (reservation) => {
-    setReservations([...reservations, reservation]);
-  };
-
+function RoutesConfig() {
   return (
-   
-      <Routes>
-        <Route path="/home" element={<DashboardView />} />
-        <Route path="/voyages" element={<Card addReservation={addReservation} />} />
-        <Route path="/reservations" element={<ReservationView reservations={reservations} />} />
-        <Route path="/" element={<Signup />}></Route>
-        <Route path="/signin" element={<Signin />}></Route>
+    <Routes>
+     
+      <Route path="/" element={<Signup />} />
+      <Route path="/signin" element={<Signin />} />
+
+     
+      <Route
+        path="/home"
+        element={
+          <PrivateRoute>
+            <DashboardView />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/voyages"
+        element={
+          <PrivateRoute>
+            <Card />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/reservations"
+        element={
+          <PrivateRoute>
+            <ReservationView />
+          </PrivateRoute>
+        }
       
-      </Routes>
-    
+      />
+      <Route
+      path="/account" element={
+        <PrivateRoute><Accountview/></PrivateRoute>
+      }></Route>
+    </Routes>
   );
 }
 
-export default AppRoutes;
+export default RoutesConfig;

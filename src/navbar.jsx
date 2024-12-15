@@ -14,6 +14,9 @@ function Navbar() {
         <Link to="/reservations" className="btn btn-ghost text-xl">
           Mes réservations
         </Link>
+        <Link to="/account" className="btn btn-ghost text-xl">
+          My account
+        </Link>
         
      
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import ShowCard from "../components/card";
+
 import ButtonReserve from "../components/buttonreserve";
 import cards from "../data/cardData";
 import Navbar from "../../navbar";
