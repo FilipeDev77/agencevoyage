@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonReserve from "../components/buttonreserve";
+import ButtonReserve from "./buttonreserve";
 
 function ShowCard(props) {
   return (

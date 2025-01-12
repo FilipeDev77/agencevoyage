@@ -28,10 +28,11 @@ const Signin = () => {
       const token = response.data?.access_token;
 
       if (token) {
+        
         // Stocker le token dans localStorage pour l'utiliser plus tard
         localStorage.setItem('token', token);
 
-        console.log(localStorage.getItem('token'));
+        
 
         // Affichage du message de succès
         setMessage('Connexion réussie !');
